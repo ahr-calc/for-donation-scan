@@ -4,51 +4,35 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style type="text/css" media="all">
-    /* 这一层样式是为了让单独打开这个html时居中显示 
-      如果嵌入其他网页，这一层body样式不会影响外部
-    */
     body {
       margin: 0;
-      padding: 5px;
-      background-color: #f0f0f0; /* 可选：背景色 */
+      padding: 0;
+      background-color: #f0f0f0; /* 背景色 */
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start; /* 顶部对齐 */
       min-height: 100vh;
+      overflow: hidden; /* 防止出现多余滚动条 */
     }
 
-    /* 这是一个容器类，用于包裹 pre 标签 */
     .ascii-art-container {
-      /* 允许容器在屏幕较小时出现横向滚动条，而不是挤压图片 */
-      overflow-x: auto; 
-      /* 确保容器宽度适应内容，而不是强制占满父元素 */
-      width: fit-content; 
-      max-width: 100%;
-      background-color: #fff; /* 这里的背景色取决于你的图片背景 */
+      transform-origin: top left; /* 缩放基点设为左上角 */
+      background-color: #fff;
     }
 
     pre {
-      /* 核心修改：强制不换行，保持 ASCII 的刚性形状 */
-      white-space: pre; 
-      
-      /* 字体设置 */
+      white-space: pre; /* 核心：强制不换行 */
       font-family: 'Menlo', 'Courier New', 'Consolas', monospace;
-      
-      /* 这里的比例决定了纵横比，保持原有的 0.6 */
-      line-height: 0.6; 
-      font-size: 8px;
-      
-      /* 移除默认 margin 防止布局干扰 */
-      margin: 0; 
-      
-      /* 确保每一个字符作为块被渲染，防止渲染引擎尝试压缩字符间距 */
+      line-height: 0.6;
+      font-size: 8px;   /* 原始字号 */
+      margin: 0;
       letter-spacing: 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="ascii-art-container">
+  <div class="ascii-art-container" id="asciiContainer">
     <pre>
 <span style="color:rgba(34, 170, 56, 1.0);">▇</span><span style="color:rgba(34, 170, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(34, 169, 57, 1.0);">▇</span><span style="color:rgba(23, 115, 235, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 247, 1.0);">▇</span><span style="color:rgba(23, 118, 245, 1.0);">▇</span>
 <span style="color:rgba(34, 170, 56, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 171, 57, 1.0);">▇</span><span style="color:rgba(34, 170, 57, 1.0);">▇</span><span style="color:rgba(23, 118, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 253, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 255, 1.0);">▇</span><span style="color:rgba(23, 119, 254, 1.0);">▇</span><span style="color:rgba(22, 119, 250, 1.0);">▇</span>
@@ -102,5 +86,41 @@
     </pre>
   </div>
 
+  <script>
+    function autoScale() {
+      const container = document.getElementById('asciiContainer');
+      const pre = container.querySelector('pre');
+      
+      // 1. 获取 ASCII 图的原始真实宽度
+      // 为了获取准确宽度，先重置缩放
+      container.style.transform = 'none';
+      const originalWidth = pre.scrollWidth;
+      const originalHeight = pre.scrollHeight;
+
+      // 2. 获取当前窗口宽度
+      const availableWidth = window.innerWidth;
+      
+      // 3. 计算缩放比例
+      // 如果屏幕比图窄，就缩小；如果屏幕够宽，保持 1.0 (或者你可以去掉 Math.min 让它放大)
+      const scale = Math.min(1, availableWidth / originalWidth);
+
+      // 4. 应用缩放
+      container.style.transform = `scale(${scale})`;
+      
+      // 5. 调整容器占位大小（因为 transform 缩放不会自动改变元素原本占据的空间）
+      container.style.width = `${originalWidth}px`;
+      container.style.height = `${originalHeight}px`;
+      
+      // 这里的 margin 可以让缩放后的图在屏幕居中（可选）
+      if(scale < 1) {
+          // 如果想居中，可以动态计算 margin-left，或者结合父元素的 flex 布局
+          // 这里保持左对齐比较简单，配合 transform-origin: top left
+      }
+    }
+
+    // 监听窗口大小变化和页面加载
+    window.addEventListener('resize', autoScale);
+    window.addEventListener('load', autoScale);
+  </script>
 </body>
 </html>
